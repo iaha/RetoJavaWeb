@@ -1,0 +1,94 @@
+/*
+ * Specific styles for this Reto Java Web
+ */
+/*
+ * General styles
+ */
+body, html {
+    height: 100%;
+    font-size: 18px;
+}
+
+.wrapper {
+    max-width: 560px;
+    padding: 40px 40px;
+    background-color: #F7F7F7;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+h1,h2,h3 {
+    margin: 0px 0px 20px !important;
+	text-align: center !important;
+	font-weight: bold !important;
+}
+
+h3 {
+	font-size: 26px !important;
+}
+
+table {
+	font-size: 18px !important;
+}
+
+.btn {
+    font-weight: 700;
+    height: 44px;
+    margin: 20px 15px -5px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Form styles
+ */
+.validate-form input[type=text],
+.validate-form select {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.validate-form .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.required {
+	color:red;
+	font-size: 15px;
+}
+
+table.matrix, td.matrix {
+	border: 2px solid #595959;
+	border-collapse: collapse;
+}
+table.matrix {
+	margin-top: 8px;
+}
+td.matrix {
+    padding: 6px 14px;
+}
+
+ ul,li {
+ 	list-style-type: none;
+ }
