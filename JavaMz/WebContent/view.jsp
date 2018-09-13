@@ -18,21 +18,21 @@
 	 	  <tr>
 	 	  	<td>Dimensión de las Matrices: <span class="required">*</span></td>
 	 	  	<td><input type="text" name="size" class="form-control" placeholder="3-3" autofocus
-	 	  		onKeyPress="return check(0,event,value)" onInput="checkLength(0,this)"></td>
+	 	  		onKeyPress="return check(0,event,value)" onInput="checkLength(0,this)" required></td>
 	  	  </tr>
 	  	  <tr>
 	  	    <td>Contenido Matriz numérica: <span class="required">*</span></td>
-	  	    <td><input type="text" name="matrix_a" class="form-control" placeholder="1234.."
+	  	    <td><input type="text" name="matrix_a" class="form-control" placeholder="1234.." required
 	  	    	disabled onKeyPress="return check(1,event,value)" onInput="checkLength(1,this)"></td>
 	  	  </tr>
 	  	  <tr>
 	  	    <td>Contenido Matriz letras: <span class="required">*</span></td>
-	  	    <td><input type="text" name="matrix_b" class="form-control" placeholder="ABCD.."
+	  	    <td><input type="text" name="matrix_b" class="form-control" placeholder="ABCD.." required
 	  	    	disabled onKeyPress="return check(2,event,value)" onInput="checkLength(2,this)"></td>
 		  </tr>
 		  <tr>
 		  	<td>Selección Matriz: <span class="required">*</span></td>
-		  	<td><select name="selection" class="form-control" disabled>
+		  	<td><select name="selection" class="form-control" disabled required>
 		  		<option value="">Seleccione una opción..</option>
 		  		<option value="numérica">Matriz Numérica</option>
 		  		<option value="letras">Matriz Letras</option>
@@ -40,7 +40,7 @@
 		  </tr>
 		  <tr>
 		  	<td>Operación: <span class="required">*</span></td>
-		  	<td><select name="operation" class="form-control" disabled>
+		  	<td><select name="operation" class="form-control" disabled required>
 		  		<option value="">Seleccione una opción..</option>
 		  		<option value="ocurrencias">Consultar ocurrencias</option>
 		  		<option value="repetidos">Eliminar repetidos</option>

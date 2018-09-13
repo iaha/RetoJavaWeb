@@ -150,7 +150,7 @@ function showMessage(type) {
 				$('#message').text('Debe ingresar todos los campos obligarios!');
 				break;
 			case -4 :
-				$('#message').text('Los campos deben ser del tipo adecuado!');
+				$('#message').text('Todos los campos deben estar correctos!');
 				break;
 		}
 	}
