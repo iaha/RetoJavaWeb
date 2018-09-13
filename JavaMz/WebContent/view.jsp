@@ -49,19 +49,23 @@
 	  	  </tr>
 	  	  <tr></tr>
 	  	  <tr>
-		  	<td><lu>
-		  		<li><span class="required">(*) Campos obligatorios</span></li>
-		  		<li><span class="required alert-danger" role="alert"">
-		  			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  					<span class="sr-only">Error:</span>
-					Enter a valid email address
-		  		</span></li>
-	  		</lu></td>
+		  	<td>
+		  		<span class="required">(*) Campos obligatorios</span>
+	  		</td>
 		  	<td>
 		  		<input type="submit" value="Enviar" class="btn btn-lg btn-success pull-right" disabled>
 		  		<input type="reset" value="Clear" class=" btn btn-lg btn-default pull-right">
 		  	</td>
 		  </tr>
+		  <tr>
+		  	<td colspan="2">
+		  		<span id="message-box" class="required" role="alert">
+		  			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  					<span class="sr-only">Error:</span>
+					<span id="message"></span>
+		  		</span>
+	  		</td>
+  		  </tr>
 	  	</table>
 	  </form>
 	</div></div>

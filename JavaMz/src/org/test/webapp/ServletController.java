@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public ServletController() {
@@ -90,4 +90,5 @@ public class ServletController extends HttpServlet {
 		else
 			return matrix.sortAsc();
 	}
+
 }

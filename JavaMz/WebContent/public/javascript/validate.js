@@ -42,6 +42,7 @@ const fields = [{
 		"valid" : 0
 	}];
 const button = $('input.btn-success');
+$('#message-box').hide();
 
 // Manejo los cambios en los campos del formulario
 fields[0].selector.change(() => changeHandler(0));
@@ -50,6 +51,19 @@ fields[2].selector.change(() => changeHandler(2));
 fields[3].selector.change(() => changeHandler(3));
 fields[4].selector.change(() => changeHandler(4));
 
+
+// Contiene el handler general para todos los fields
+function changeHandler(i) {
+	let codigo = 0;
+	codigo = notEmpty(fields[i]);
+	if(codigo > 0) codigo = fieldValidation(fields[i]);
+	else showMessage(codigo);
+	if(codigo > 0) {
+		fields[i].valid = codigo;
+		toggleDisabled(i, false);
+		//alert('Change after all ' + i + ': ' + fields[i].valid);
+	} else showMessage(codigo);
+}
 
 // Los campos deben ser del tipo adecuado!
 function fieldValidation(field) {
@@ -87,18 +101,6 @@ function toggleDisabled(init, bool) {
 			fields[i].selector.attr("disabled", bool);
 }
 
-// Contiene el handler general para todos los fields
-function changeHandler(i) {
-	let codigo = 0;
-	codigo = notEmpty(fields[i]);
-	if(codigo > 0) codigo = fieldValidation(fields[i]);
-	if(codigo > 0) {
-		fields[i].valid = codigo;
-		toggleDisabled(i, false);
-		//alert('Change after all ' + i + ': ' + fields[i].valid);
-	}
-}
-
 function check(i,e,value){
     const unicode = e.charCode ? e.charCode : e.keyCode;
     if(i < 2) { //entradas de solo numeros
@@ -125,44 +127,35 @@ function checkLength(i, element){
 }
 
 
-$('.validate-form').on('beforeSubmit',function(){
-    var check = true;
-
-    if($(name).val().trim() == ''){
-        showValidate(name);
-        check=false;
-    }
-
-
-    if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-        showValidate(email);
-        check=false;
-    }
-
-    if($(message).val().trim() == ''){
-        showValidate(message);
-        check=false;
-    }
-
-    return check;
+$('.validate-form').submit(() => {
+    if($('#message').hasClass('alert-danger'))
+    	event.preventDefault();
 });
 
 
-$('.validate-form .input100').each(function(){
-    $(this).focus(function(){
-       hideValidate(this);
-   });
+$('.validate-form').each(() => {
+    $(this).focus(() => showMessage(-1));
 });
 
-function showValidate(input) {
-    var thisAlert = $(input).parent();
-
-    $(thisAlert).addClass('alert-validate');
+function showMessage(type) {
+	if (type == -1) {
+		$('#message-box').removeClass('alert-validate');
+		$('#message-box').hide();
+	}
+	else {
+		$('#message-box').addClass('alert-validate');
+		$('#message-box').show();
+		switch (type) {
+			case -3 :
+				$('#message').text('Debe ingresar todos los campos obligarios!');
+				break;
+			case -4 :
+				$('#message').text('Los campos deben ser del tipo adecuado!');
+				break;
+		}
+	}
+	
+	
 }
 
-function hideValidate(input) {
-    var thisAlert = $(input).parent();
-
-    $(thisAlert).removeClass('alert-validate');
-}
 

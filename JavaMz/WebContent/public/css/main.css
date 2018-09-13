@@ -39,6 +39,7 @@ table {
 }
 
 .btn {
+	margin: 0px 15px 5px !important;
     font-weight: 700;
     height: 44px;
     margin: 20px 15px -5px;
@@ -74,8 +75,9 @@ table {
 }
 
 .required {
-	color:red;
+	color:#a94442;
 	font-size: 15px;
+	background: none;
 }
 
 table.matrix, td.matrix {
@@ -89,6 +91,3 @@ td.matrix {
     padding: 6px 14px;
 }
 
- ul,li {
- 	list-style-type: none;
- }
